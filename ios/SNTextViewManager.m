@@ -6,7 +6,7 @@
 //  Copyright © 2017 standardnotes. All rights reserved.
 //
 
-#import "TextView.h"
+#import "SNTextViewManager.h"
 #import "SNTextView.h"
 #import <React/RCTFont.h>
 
