@@ -30,10 +30,9 @@ RCT_EXPORT_VIEW_PROPERTY(paddingLeft, CGFloat)
 
 - (UIView *)view
 {
-    if(!_textView) {
-        _textView = [[SNTextView alloc] init];
-        _textView.delegate = self;
-    }
+    _textView = [[SNTextView alloc] init];
+    _textView.delegate = self;
+
     return _textView;
 }
 
