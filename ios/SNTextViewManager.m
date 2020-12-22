@@ -43,6 +43,13 @@ RCT_EXPORT_METHOD(blur:(nonnull NSNumber *)node)
     });
 }
 
+RCT_EXPORT_METHOD(focus:(nonnull NSNumber *)node)
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [_textView becomeFirstResponder];
+    });
+}
+
 RCT_CUSTOM_VIEW_PROPERTY(fontSize, NSNumber, SNTextView)
 {
     view.font = [RCTFont updateFont:view.font withSize:json ?: @(defaultView.font.pointSize)];
