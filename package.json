@@ -1,8 +1,8 @@
 {
   "name": "@standardnotes/react-native-textview",
   "title": "Sn Textview",
-  "version": "1.0.1",
-  "description": "TODO",
+  "version": "1.0.2",
+  "description": "Native text view component for React Native",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,11 +15,8 @@
   "keywords": [
     "react-native"
   ],
-  "author": {
-    "name": "Radek Czemerys",
-    "email": "radek@standardnotes.org"
-  },
-  "license": "MIT",
+  "author": "Standard Notes",
+  "license": "AGPLv3",
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "peerDependencies": {
