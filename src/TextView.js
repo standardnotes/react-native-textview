@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ColorPropType } from 'react-native';
-import {requireNativeComponent, View, TextInput, findNodeHandle, UIManager, Platform} from 'react-native';
+import {requireNativeComponent, TextInput, findNodeHandle, UIManager, Platform} from 'react-native';
 
 export default class TextView extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      initialValue: props.defaultValue
+    }
   }
 
   onChangeText = (event) => {
@@ -21,13 +25,19 @@ export default class TextView extends Component {
     this.ref.focus();
   }
 
+  setText(text) {
+    this.setState({
+      initialValue: text
+    })
+  }
+
   render() {
     if(Platform.OS == "android") {
       const container =
         <SNTextView
           {...this.props}
           ref={(ref) => this.ref = ref}
-          text={this.props.value}
+          text={this.state.initialValue}
           onChangeText={this.onChangeText}
         />
       return container;
@@ -36,7 +46,7 @@ export default class TextView extends Component {
         <SNTextView
           {...this.props}
           ref={(ref) => this.ref = ref}
-          text={this.props.value}
+          text={this.state.initialValue}
           onChangeText={this.onChangeText}
         />
       )

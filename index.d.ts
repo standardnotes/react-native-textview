@@ -12,6 +12,7 @@ interface Props {
 class TextView extends Component<Props & TextInputProps> {
    export const focus: () => void;
    export const blur: () => void;
+   export const setText: (text: string) => void;
 }
 
 export default TextView;
